@@ -9,3 +9,4 @@ secret.cfg
 *.sqlite
 personal*
 src
+bootstrap.py
