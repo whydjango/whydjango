@@ -1,0 +1,21 @@
+[buildout]
+extends=
+    development_local.cfg
+find-links +=
+eggs +=
+develop +=
+
+[versions]
+
+[django]
+settings=settings.personal
+project_stage=my-dev
+wsgi=true
+test=
+    cms
+    filer
+
+# this automatically updates bootstrap.py
+parts += bootstrap
+[bootstrap]
+recipe = collective.recipe.bootstrap
