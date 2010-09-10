@@ -1,0 +1,25 @@
+@charset "utf-8";
+/**
+ * @author		Firstname Lastname
+ * @copyright	http://www.divio.ch
+ */
+
+/*##################################################|*/
+/* #IE6 FIXES# */
+hr { margin:7.5px 0; } /* margin fix */
+.btn input { padding-top:3px !important; } /* 1px padding error */
+#require-browser { display:none; }
+
+/* png fix */
+* html .pngfixcss {
+behavior:
+	expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(
+	/* for images */
+	this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+	this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",
+	this.src = "/media/img/transparent.gif"):(
+	/* for background */
+	this.origBg = this.origBg?this.origBg:this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+	this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')",
+	this.runtimeStyle.backgroundImage = "none")),this.pngSet=true));
+}

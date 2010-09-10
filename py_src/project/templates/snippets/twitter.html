@@ -1,0 +1,22 @@
+{% load i18n sekizai_tags %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ MEDIA_URL }}js/plugins.tweet.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function ($) {
+	// add share button
+	$('.tweet-me').twitter();
+});
+//]]>
+</script>
+{% endaddtoblock %}
+
+<!-- use twitter plugin for real tweets
+	 this example only shows the tweet me button -->
+
+<h3>Tweetme button</h3>
+<p>
+	<span class="tweet-me">http://www.facebook.com</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="tweet-me">http://www.twitter.com</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="tweet-me">http://www.buzz.com</span>
+</p>

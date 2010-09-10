@@ -1,0 +1,10 @@
+.*
+*.pyc
+develop-eggs
+eggs
+bin
+parts
+downloads
+secret.cfg
+*.sqlite
+personal*

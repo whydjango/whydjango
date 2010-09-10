@@ -1,0 +1,18 @@
+{% load uni_form_tags i18n %}
+
+{% if form_html %}
+	<!-- this is used for row generating -->
+	{{ form_html }}
+{% else %}
+	<fieldset class="align-horizontal">  
+		{{ form|as_uni_form }}
+	</fieldset>
+{% endif %}
+
+{% if inputs %}
+	<li>
+	{% for input in inputs %}
+		{{ input }}
+	{% endfor %}
+	</li>    
+{% endif %}

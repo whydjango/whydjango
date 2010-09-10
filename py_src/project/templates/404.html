@@ -1,0 +1,11 @@
+{% extends "tpl_master.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "404 - Page not found" %}{% endblock %}
+
+{% block tpl_id %}tpl_404{% endblock %}
+
+{% block content %}
+<h1>{% trans "404 - Page not found" %}</h1>
+<p>{% trans "We're sorry, but the requested page could not be found." %}</p>
+{% endblock content %}

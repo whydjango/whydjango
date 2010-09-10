@@ -1,0 +1,24 @@
+{% load sekizai_tags %}
+{% if toggle_fields %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(document).ready(function() {
+{% for field in toggle_fields %}
+	var el = $('#{{ field.auto_id }}');
+	var div = $("#div_{{ field.auto_id }}");
+	
+	el.addClass('hidden');
+	
+	var str_{{ field.auto_id }} = div.find('label').text();
+	div.find('label').text(str_{{ field.auto_id }} + ' (click to edit)');
+	
+	div.click(function() {
+		$('#div_{{ field.auto_id }} label').text(str_{{ field.auto_id }});
+		el.removeClass('hidden').focus();    
+	});        
+{% endfor %}
+});
+</script>
+{% endaddtoblock %}
+{% endif %}
+          

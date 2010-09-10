@@ -1,0 +1,10 @@
+{% load i18n thumbnail filermedia %}
+<p class="image_plugin">
+{% if link %}<a href="{{ link }}">{% endif %}
+{% if object.image_url %}
+    <img src="{{ object.image_url }}"{% if object.float %} class="{{ object.float }}"{% endif %} alt="{% if object.alt %}{{ object.alt }}{% endif %}"{% if object.width %} width="{{ object.width }}"{% endif %}{% if object.height %} height="{{ object.height }}"{% endif %} />
+{% else %}                  
+    <img src="{% thumbnail object.image image_size crop,upscale %}"{% if object.float %} class="{{ object.float }}"{% endif %} alt="{% if object.alt %}{{ object.alt }}{% endif %}" />
+{% endif %}
+{% if link %}</a>{% endif %}
+</p>

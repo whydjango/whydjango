@@ -1,0 +1,233 @@
+{% load i18n %}
+<!-- todo:
+	- implement rounded corners
+	- typekit (font-face) example
+-->
+<!-- headings example -->
+<h1>What is Lorem Ipsum?</h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard...</p>
+
+<h2>Where does it come from?</h2>
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old...</p>
+
+<h3>And more...</h3>
+<p>The standard chunk of <a href="#" rel="target:blank">Lorem Ipsum</a> used since the 1500s is reproduced below for those interested...</p>
+
+<h4>Why do we use it?</h4>
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is <a href="http://www.google.ch" class="popup">open popup</a> that it has a more-or-less normal...</p>
+
+<h5>Where can I get some?</h5>
+<p>There are many variations of <a href="#link">passages of Lorem Ipsum available</a>, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable...</p>
+
+<h6>Example</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#info" rel="divio.ch" class="mailcrypte">E-Mail</a> Suspendisse nec nisi dui, eu fringilla sem. Cras a magna eget nisi placerat sodales. Curabitur scelerisque, dolor non faucibus consequat...</p>
+
+<!-- text example -->
+<q cite="http://en.wikiquote.org/wiki/Quotations">Life itself is a quotation, quotation is not life.</q>
+
+<p class="nospace">Lorem 
+<sup>ipsum</sup> dolor sit 
+<sub>amet</sub>, consectetur adipisicing elit, sed do eiusmod 
+<abbr title="Some lorem ipsum gibberish">tempor incididunt</abbr> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+<acronym title="The Union of European Football Associations">UEFA</acronym> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<blockquote cite="http://en.wikiquote.org/wiki/Quotations"><p>The next best thing to being clever is being able to quote someone who is.</p></blockquote>
+
+<!-- break after margin -->
+<hr />
+
+<!-- list example -->
+<ul>
+	<li>This is an unordered listitem #1</li>
+	<li>This is an unordered listitem #2</li>
+	<li>This is an unordered listitem #3</li>
+	<li>This is an unordered listitem #4</li>
+</ul>
+
+<ol>
+	<li>This is an ordered listitem #1</li>
+	<li>This is an ordered listitem #2</li>
+	<li>This is an ordered listitem #3</li>
+	<li>This is an ordered listitem #4</li>
+</ol>
+
+<!-- definition list example -->
+<dl>
+	<dt>DefinitionTerm #1</dt>
+	<dd>DefinitionDescription to DefinitionTerm #1</dd>
+	<dd>DefinitionDescription to DefinitionTerm #1</dd>
+	<dt>DefinitionTerm #2</dt>
+	<dd>DefinitionDescription to DefinitionTerm #2</dd>
+	<dd>DefinitionDescription to DefinitionTerm #2</dd>
+	<dd>DefinitionDescription to DefinitionTerm #2</dd>
+	<dt>DefinitionTerm #3</dt>
+	<dd>DefinitionDescription to DefinitionTerm #3</dd>
+</dl>
+
+<!-- break after margin without nospace | ie doesn't like -->
+<hr />
+
+<!-- form example -->
+<ul class="notification">
+	<li class="title">Notification messages:</li>
+	<li>The cake is a lie</li>
+	<li>Follow the white rabbit</li>
+</ul>
+<ul class="warning">
+	<li class="title">Warning messages:</li>
+	<li>You lost your pants</li>
+	<li>Behind you is a Yeti</li>
+</ul>
+<ul class="success">
+	<li class="title">Success messages:</li>
+	<li>You successfully made a joke</li>
+	<li>Registration complete</li>
+</ul>
+<ul class="error">
+	<li class="title">Error messages:</li>
+	<li>Your password has been saved</li>
+	<li>You got a new message</li>
+</ul>
+<form class="frm" action="_self" method="post">
+	<fieldset class="align-horizontal">
+		<legend>Base form structure</legend>
+		<ol>
+			<!-- case: seperated title -->
+			<li class="hbreak radiocheck">
+				<label class="disable">Title</label>
+				<div>
+					<input type="radio" id="field_female" name="title" /> <label for="field_female">Female</label>
+					<input type="radio" id="field_male" name="title" /> <label for="field_male">Male</label>
+				</div>
+			</li>
+			<li>
+				<label for="field_username">Username <span title="{% trans 'This field is required' %}">*</span></label>
+				<div><input type="text" class="input_text error" id="field_username" /> <span class="error">This username does not exist</span></div>
+			</li>
+			<li>
+				<label for="field_password">Password <span title="{% trans 'This field is required' %}">*</span></label>
+				<div><input type="password" class="input_text" id="field_password" /></div>
+			</li>
+			<li>
+				<label for="field_country">Country <span title="{% trans 'This field is required' %}">*</span></label>
+				<div>
+					<select class="input_select" id="field_country">
+						<optgroup label="Awesome countrys">
+							<option value="ch">Switzerland</option>
+							<option value="jp">Japan</option>
+							<option value="ca">Canada</option>
+						</optgroup>
+						<optgroup label="Not so awesome countrys">
+							<option value="de">Germany</option>
+							<option value="at">Austria</option>
+						</optgroup>
+					</select>
+				</div>
+			</li>
+			<li>
+				<label for="field_message">Message</label>
+				<div><textarea cols="50" rows="3" class="input_textarea" id="field_message"></textarea></div>
+			</li>
+			<!-- case: checkbox and text -->
+			<li class="hbreak radiocheck">
+				<label class="disable">&nbsp;</label>
+				<div><p><input type="checkbox" class="radiocheck" id="field_agb" /> <label for="field_agb">I agree to the terms of service.</label></p></div>
+			</li>
+		</ol>
+	</fieldset>
+	<fieldset class="align-horizontal">
+		<ol>
+			<li>
+				<label class="disable">&nbsp;</label>
+				<div>
+					<span class="btn"><input type="submit" value="Input Button" /></span>
+					<a href="#link" class="btn"><span>Anchor Button</span></a>
+				</div>
+			</li>
+		</ol>
+	</fieldset>
+</form>
+
+<!-- break after margin without nospace | ie doesn't like -->
+<hr />
+
+<!-- table example -->
+<table border="0" cellpadding="0" cellspacing="0" class="tbl_default" summary="">
+	<caption>Base table structure</caption>
+	<colgroup>
+		<col width="25%" />
+		<col width="25%" />
+		<col width="25%" />
+		<col width="25%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col" abbr="Blue color">Row 1</th>
+			<th scope="col" abbr="Red color">Row 2</th>
+			<th scope="col" abbr="Yellow color">Row 3</th>
+			<th scope="col" abbr="Orange color">Row 4</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr><td colspan="4">footer</td></tr>
+	</tfoot>
+	<tbody>
+		<tr class="even">
+			<td>Row 1 Cell 1</td>
+			<td>Row 1 Cell 2</td>
+			<td>Row 1 Cell 3</td>
+			<td>Row 1 Cell 4</td>
+		</tr>
+		<tr class="odd">
+			<td>Row 2 Cell 1</td>
+			<td>Row 2 Cell 2</td>
+			<td>Row 2 Cell 3</td>
+			<td>Row 2 Cell 4</td>
+		</tr>
+		<tr class="even">
+			<td>Row 3 Cell 1</td>
+			<td>Row 3 Cell 2</td>
+			<td>Row 3 Cell 3</td>
+			<td>Row 3 Cell 4</td>
+		</tr>
+		<tr class="odd">
+			<td>Row 4 Cell 1</td>
+			<td>Row 4 Cell 2</td>
+			<td>Row 4 Cell 3</td>
+			<td>Row 4 Cell 4</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- break after nospace -->
+<div style="background:#eee; height:15px; font-size:1px;"></div>
+<hr />
+<div style="background:#eee; height:15px; font-size:1px; margin:0 0 15px;"></div>
+
+<!-- grid example -->
+<h4>960 Grid Example</h4>
+<div class="gridexample">
+	<div class="grid_8">
+		<p>320 <span class="hidden">(subtract 10px margin)</span></p>
+	</div>
+	<div class="grid_16">
+		<p>640 <span class="hidden">(subtract 10px margin)</span></p>
+	</div>
+	<div class="clear"></div>
+
+	<div class="grid_11">
+		<p>480 <span class="hidden">(subtract 10px margin)</span></p>
+	</div>
+	<div class="grid_11 prefix_2" style="background:#f5f5f5;">
+		<p>480 (80px padding) <span class="hidden">(subtract 10px margin)</span></p>
+	</div>
+	<div class="clear"></div>
+
+	<div class="grid_8 push_16">
+		<p>320 <span class="hidden">(subtract 10px margin)</span></p>
+	</div>
+	<div class="grid_16 omage pull_8">
+		<p>640 <span class="hidden">(subtract 10px margin)</span></p>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+@charset "utf-8";
+/**
+ * @author		Firstname Lastname
+ * @copyright	http://www.divio.ch
+ */
+
+/*##################################################|*/
+/* GENERAL FIXES# */
+.opacity { filter:alpha(opacity=90); } /* opacity hack */
+.btn span, .btn input { padding-top:2px; } /* 1px padding error */
+
+/*##################################################|*/
+/* IE7 FIXES# */
+*+html hr { margin:7.5px 0; } /* margin fix */
+*+html .btn input { padding-top:3px !important; } /* 1px padding error */
+*+html {}
+
+/*##################################################|*/
+/* IE8 FIXES */
+*html {}

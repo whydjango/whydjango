@@ -1,0 +1,44 @@
+{% load i18n sekizai_tags %}
+{% addtoblock "js" %}<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2/swfobject.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+//<![CDATA[
+	swfobject.registerObject("flash-plugin-{{ object.id }}", "9.0.45", "{{ CMS_MEDIA_URL }}swf/expressInstall.swf");
+//]]>
+</script>
+{% endaddtoblock %}
+
+<div class="plugin_flash">
+	<!--<video width="640" height="360" controls preload="none">
+	<source src="__VIDEO__.MP4" type="video/mp4" />-->
+
+	<object id="flash-plugin-{{ object.id }}" width="{{ object.get_width }}" height="{{ object.get_height }}" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+		<param name="movie" value="{{ object.file.url }}"/>
+		<param name="allowFullScreen" value="true" />
+		<param name="allowScriptAccess" value="always" />
+		<param name="allowFullScreen" value="true" />
+		<param name="quality" value="autohigh" />
+		<param name="wmode" value="window" />
+		<param name="flashvars" value="lang={{ LANGUAGE_CODE }}" />
+			<!--[if !IE]>-->
+			<object width="{{ object.get_width }}" height="{{ object.get_height }}" data="{{ object.file.url }}" type="application/x-shockwave-flash">
+			<param name="allowFullScreen" value="true" />
+			<param name="allowScriptAccess" value="always" />
+			<param name="allowFullScreen" value="true" />
+			<param name="quality" value="autohigh" />
+			<param name="wmode" value="window" />
+			<param name="flashvars" value="lang={{ LANGUAGE_CODE }}" />
+			<!--<![endif]-->
+		<!-- alternate content -->
+		{% trans "Missing flash plugin. Please download the latest Adobe Flash Player: " %}
+		<a href="http://www.adobe.com/go/getflashplayer">
+			<img alt="{% trans 'Get Adobe Flash Player' %}" src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"/>
+		</a>
+		<!-- /alternate content -->
+			<!--[if !IE]>-->
+			</object>
+			<!--<![endif]-->
+	</object>
+
+	<!--</video>-->
+</div>

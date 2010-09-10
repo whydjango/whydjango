@@ -1,0 +1,11 @@
+{% extends "tpl_master.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "500 - Server error" %}{% endblock %}
+
+{% block tpl_id %}tpl_500{% endblock %}
+
+{% block content %}
+<h1>{% trans "500 - Server error" %}</h1>
+<p>{% trans "There's been an error. It's been reported to the site administrators via e-mail and should be fixed shortly. Thanks for your patience." %}</p>
+{% endblock content %}

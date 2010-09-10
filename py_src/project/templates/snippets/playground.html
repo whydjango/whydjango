@@ -1,0 +1,147 @@
+{% load i18n sekizai_tags %}
+
+<h2>pngfix Showcase</h2>
+<h5>using: DD_belatedPNG, pngfixcss behaviour</h5>
+
+<!-- use for none-positioned none-repeatetive images -->
+<p style="background:#eee;"><img src="http://www.dillerdesign.com/experiment/DD_belatedPNG/boxbg2.png" class="pngfixcss" alt ="" /></p>
+<div class="pngfix" style="width:100%; height:100px; margin:0 0 15px; background:url('http://www.dillerdesign.com/experiment/DD_belatedPNG/boxbg2.png') repeat left top;"></div>
+
+<h2>PIE Showcase: border-radius</h2>
+<h5>using: border-radius, box-shadow, background-gradient</h5>
+
+{% addtoblock "css" %}
+<style type="text/css">
+<!--
+.case_1 {
+	padding:50px 25px; margin:0 0 20px; border:1px solid #090; background:#eee; font-size:14px; color:#090;
+	/* topleft, topright, bottomright, bottomleft */
+	-webkit-border-radius:10px 10px 0 0; -moz-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;
+	/* color, left-margin, top-margin, spread */
+	-webkit-box-shadow:#c0c0c0 0 2px 5px; -moz-box-shadow:#c0c0c0 0 2px 4px; box-shadow:#c0c0c0 0 2px 5px;
+	/* from value, to value*/
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#efd), to(#bf6));
+	background:-moz-linear-gradient(#efd, #bf6);
+	background:linear-gradient(#efd, #bf6);
+	
+	-pie-background:linear-gradient(#efd, #bf6);
+	behavior:url('/media/css/PIE.htc');
+}
+-->
+</style>
+{% endaddtoblock %}
+<div class="case_1">Mmmmmm, pie...</div>
+
+<!-- BREAK -->
+
+<h2>PIE Showcase: box-shadow</h2>
+<h5>using: box-shadow</h5>
+
+{% addtoblock "css" %}
+<style type="text/css">
+<!--
+.case_3-a {
+	float:left; padding:20px 25px; margin-bottom:25px; font-size:14px; color:#090; background:#fff;
+	-moz-box-shadow:0.5em -0.5em 0.4em red, 0.5em 0.5em 0.4em yellow, -0.5em 0.5em 0.4em lime, -0.5em -0.5em 0.4em blue;
+	-webkit-box-shadow:0.5em -0.5em 0.4em red, 0.5em 0.5em 0.4em yellow, -0.5em 0.5em 0.4em lime, -0.5em -0.5em 0.4em blue;
+	box-shadow:0.5em -0.5em 0.4em red, 0.5em 0.5em 0.4em yellow, -0.5em 0.5em 0.4em lime, -0.5em -0.5em 0.4em blue;
+	behavior:url('/media/css/PIE.htc');
+}
+.case_3-b {
+	float:left; padding:20px 25px; margin-left:100px; margin-bottom:25px; font-size:14px; color:#090; background:#fff;
+	-moz-box-shadow:0 0 20px black, 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue, 20px -15px 30px red;
+	-webkit-box-shadow:0 0 20px black, 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue, 20px -15px 30px red;	
+	box-shadow:0 0 20px black, 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue, 20px -15px 30px red;
+	behavior:url('/media/css/PIE.htc');
+}
+
+-->
+</style>
+{% endaddtoblock %}
+
+<div class="case_3-a">this is a rainbow</div>
+<div class="case_3-b">this is another rainbow</div>
+<div class="clear"></div>
+
+<!-- BREAK -->
+
+<h2>PIE showcase: border-image</h2>
+<h5>using: border-radius, border-image</h5>
+
+{% addtoblock "css" %}
+<style type="text/css">
+<!--
+.case_4 { color:#fff; border:8px solid #013d7a; padding:5px 15px; margin:0 0 15px;
+	-webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; 
+	-webkit-border-image: url('http://flashjunior.ch/school/test/ietest/pie/img/border.png') 8 8 8 8 stretch;
+	-moz-border-image: url('http://flashjunior.ch/school/test/ietest/pie/img/border.png') 8 8 8 8 stretch;
+	border-image: url('http://flashjunior.ch/school/test/ietest/pie/img/border.png') 8 8 8 8 fill stretch;
+
+	behavior:url('/media/css/PIE.htc');
+}
+-->
+</style>
+{% endaddtoblock %}
+
+<div class="case_4">backgroundimage test</div>
+
+<!-- BREAK -->
+
+<h2>PIE showcase: -pie-background</h2>
+<h5>using: background-rgba</h5>
+
+{% addtoblock "css" %}
+<style type="text/css">
+<!--
+.case_5 { list-style:none; margin:0 0 15px; background:#9e9; }
+.case_5 li { padding:4px 5px; color:#000; behavior:url('/media/css/PIE.htc'); }
+.case_5 .rgba_100 { background:rgba(0, 150, 255, 1); -pie-background:rgba(0, 150, 255, 1); }
+.case_5 .rgba_80 { background:rgba(0, 150, 255, 0.8); -pie-background:rgba(0, 150, 255, 0.8); }
+.case_5 .rgba_60 { background:rgba(0, 150, 255, 0.6); -pie-background:rgba(0, 150, 255, 0.6); }
+.case_5 .rgba_40 { background:rgba(0, 150, 255, 0.4); -pie-background:rgba(0, 150, 255, 0.4); }
+.case_5 .rgba_20 { background:rgba(0, 150, 255, 0.2); -pie-background:rgba(0, 150, 255, 0.2); }
+.case_5 .rgba_0 { background:rgba(0, 150, 255, 0); -pie-background:rgba(0, 150, 255, 0); }
+-->
+</style>
+{% endaddtoblock %}
+
+<ul class="case_5 clearfix">
+	<li class="rgba_100">100%</li>
+	<li class="rgba_80">80%</li>
+	<li class="rgba_60">60%</li>
+	<li class="rgba_40">40%</li>
+	<li class="rgba_20">20%</li>
+	<li class="rgba_0">0%</li>
+</ul>
+
+<!-- BREAK -->
+
+<h2>PIE Showcase: -pie-watch-ancestors</h2>
+<h5>using: border-radius, box-shadow, background-gradient</h5>
+
+{% addtoblock "css" %}
+<style type="text/css">
+<!--
+.case_2 { cursor:pointer; overflow:visible; /* prevent extra horizontal padding in IE */
+	font-size:14px; color:#090 !important; text-decoration:none; padding:12px; margin-right:15px;
+	border:1px solid #090; background:#efd; white-space:nowrap;
+	-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;
+	-webkit-box-shadow:#c0c0c0 3px 3px 6px; -moz-box-shadow:#c0c0c0 3px 3px 6px; box-shadow:#c0c0c0 3px 3px 6px;
+	background:-webkit-gradient(linear, 0 0, 0 bottom, from(#efd), to(#bf6));
+	background:-moz-linear-gradient(#efd, #bf6);
+	background:linear-gradient(#efd, #bf6);
+	-pie-background: linear-gradient(#efd, #bf6);
+	behavior:url('/media/css/PIE.htc');
+}
+.case_2:hover { border-width:2px; padding:11px; }
+.case_2 input::-moz-focus-inner { /* prevent extra padding in Firefox */ padding:0; border:0; }
+-->
+</style>
+{% endaddtoblock %}
+
+<p>
+	<a class="case_2">I'm an &lt;anchor&gt; button</a>
+	<!-- be carfull with input submits, input buttons are fine -->
+	<input type="submit" value="I'm an <input> button" class="case_2" />
+	<button class="case_2">I'm an &lt;button&gt; button</button>
+</p>

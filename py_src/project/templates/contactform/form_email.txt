@@ -1,0 +1,10 @@
+{% load i18n %}
+{% transblock %}The following form has been sent from {{ site.name }}.{% transblock %}
+
+{% trans "Formname:" %} {{ contact_form.name }}
+-------------
+{{ form_url }}
+
+{{ rows }}
+
+{% trans "Technology by Divio GmbH" %}

@@ -1,0 +1,17 @@
+{% load i18n thumbnail %}
+<div class="plugin_teaser{% if object.style %} {{ object.style }}{% endif %}">
+<h2>{{ object.title }}</h2>
+{% if object.image or object.image_url %}
+	<p>{% if link %}<a href="{{ link }}"{% if obj.target_blank %} target="_blank"{% endif %}>{% endif %}
+		{% if object.image_url %}
+            <img src="{{ object.image_url }}" alt="{% if object.alt %}{{ object.alt }}{% endif %}"{% if object.width %} width="{{ object.width }}"{% endif %}{% if object.height %} height="{{ object.height }}"{% endif %} />
+        {% else %}                  
+            <img src="{% thumbnail object.image image_size crop,upscale %}" alt="{% if object.alt %}{{ object.alt }}{% endif %}" />
+        {% endif %}
+	{% if link %}</a>{% endif %}</p>
+{% endif %}
+{% if object.description %}
+<p>{{ object.description }}</p>
+{% endif %}
+{% if link %}<a href="{{ link }}"{% if obj.target_blank %} class="target:blank"{% endif %}>{% trans "more" %} &#187;</a>{% endif %}
+</div>

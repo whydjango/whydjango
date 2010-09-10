@@ -1,0 +1,39 @@
+{% extends "tpl_master.html" %}
+{% load i18n cms_tags %}
+
+{% block tpl_id %}tpl_col-three{% endblock %}
+
+{% block content %}
+<!-- start: content -->
+<h1 class="hidden" id="content">{% trans "Content:" %} {% page_attribute title %}</h1>
+<div id="main" class="container_24 clearfix">
+{% block feature %}
+	{% with "960" as width %}
+		{% placeholder feature %}
+	{% endwith %}
+{% endblock feature %}
+	<div class="grid_8">
+		{% block col_aside %}
+			{% with "310" as width %}
+				{% placeholder col_aside %}
+			{% endwith %}
+		{% endblock col_aside %}
+	</div>
+	<div class="grid_8">
+		{% block page_title %}<h1>{% page_attribute title %}</h1>{% endblock page_title %}
+		{% block col_content %}
+			{% with "310" as width %}
+				{% placeholder col_content %}
+			{% endwith %}
+		{% endblock col_content %}
+	</div>
+	<div class="grid_8">
+		{% block col_sidebar %}
+			{% with "310" as width %}
+				{% placeholder col_sidebar %}
+			{% endwith %}
+		{% endblock col_sidebar %}
+	</div>
+</div>
+<!-- end: content -->
+{% endblock content %}

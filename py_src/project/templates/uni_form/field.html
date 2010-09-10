@@ -1,0 +1,68 @@
+{% load i18n uni_form_field uniform_extratools %}
+
+{% if field.is_hidden %}
+	<li class="hidden">{{ field }}</li>
+{% else %}
+	<li class="clearfix{% if field|is_checkbox or 'radioselect' in field|get_widget_classes %} hbreak radiocheck{% endif %}{% if field.field.widget.attrs.class %} {{ field.field.widget.attrs.class }}{% endif %}">
+	{% if not field|is_checkbox and not "radioselect" in field|get_widget_classes %}
+
+		<!-- start: normal field -->
+		{% if field.label %}
+		<label for="{{ field.auto_id }}">
+			{{ field.label|safe }}{% if field.field.required %}<span title="{% trans 'This field is required' %}">*</span>{% endif %}
+		</label>
+		{% else %}<label>&nbsp;</label>{% endif %}
+		<div{% if field.errors %} class="error"{% endif %}>
+			{{ field|with_class }}
+			{% for error in field.errors %}
+			<p class="error nospace" id="error_{{ forloop.counter }}_{{ field.auto_id }}">
+				{{ error|safe }}
+			</p>
+			{% endfor %}
+		</div>
+		<!-- end: normal field -->
+
+	{% else %}
+
+		{% if field|is_checkbox %}
+		<!-- start: checkbox field -->
+		<label class="disable">&nbsp;</label>
+		<div{% if field.errors %} class="error"{% endif %}>
+			{{ field|with_class }}
+			<label for="{{ field.auto_id }}">
+				{{ field.label|safe }}{% if field.field.required %}<span title="{% trans 'This field is required' %}">*</span>{% endif %}
+			</label>
+			{% for error in field.errors %}
+			<p class="error nospace" id="error_{{ forloop.counter }}_{{ field.auto_id }}">
+				{{ error|safe }}
+			</p>
+			{% endfor %}
+		</div>
+		<!-- end: checkbox field -->
+		{% endif %}
+
+		{% if "radioselect" in field|get_widget_classes %}
+		<!-- start: radio field -->
+		{% if field.label %}
+		<label class="disable">
+			{{ field.label|safe }}{% if field.field.required %}<span title="{% trans 'This field is required' %}">*</span>{% endif %}
+		</label>
+		{% else %}<label>&nbsp;</label>{% endif %}
+		<div{% if field.errors %} class="error"{% endif %}>
+			{{ field|safe }}
+			{% for error in field.errors %}
+			<p class="error nospace" id="error_{{ forloop.counter }}_{{ field.auto_id }}">
+				{{ error|safe }}
+			</p>
+			{% endfor %}
+		</div>
+		<!-- end: radio field -->
+		{% endif %}
+
+	{% endif %}
+
+	{% if field.help_text %}
+		<p id="hint_{{ field.auto_id }}" class="formHint">{{ field.help_text|safe }}</p>
+	{% endif %}
+	</li>
+{% endif %}

@@ -1,0 +1,59 @@
+{% load i18n sekizai_tags js %}
+{% addtoblock "js" %}<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2/swfobject.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+//<![CDATA[
+	swfobject.registerObject("flash-plugin-{{ object.id }}", "9.0.45", "{{ CMS_MEDIA_URL }}swf/expressInstall.swf");
+//]]>
+</script>
+{% endaddtoblock %}
+
+<div class="plugin_video">
+	<!--<video width="640" height="360" controls preload="none">
+	<source src="__VIDEO__.MP4" type="video/mp4" />-->
+
+	<object id="flash-plugin-{{ object.id }}" width="{{ object.get_width }}" height="{{ object.get_height }}" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" >
+		<param name="movie" value="{{ CMS_MEDIA_URL }}swf/player.swf"/>
+		<param name="allowFullScreen" value="true" />
+		<param name="allowScriptAccess" value="always" />
+		<param name="allowFullScreen" value="true" />
+		<param name="quality" value="autohigh" />
+		<param name="wmode" value="window" />
+		<param name="bgcolor" value="#{{ object.bgcolor }}" />
+		<param name="flashvars" value="movie={{ object.get_movie }}&amp;{% if object.image %}image={{ object.image.url }}&amp;{% endif %}autoplay={{ object.auto_play|bool }}&amp;loop={{ object.loop|bool }}&amp;autohide={{ object.auto_hide|bool }}&amp;fullscreen={{ object.fullscreen|bool }}&amp;color_text=0x{{ object.textcolor }}&amp;color_seekbar=0x{{ object.seekbarcolor }}&amp;color_loadingbar=0x{{ object.loadingbarcolor }}&amp;color_seekbarbg=0x{{ object.seekbarbgcolor }}&amp;color_button_out=0x{{ object.buttonoutcolor }}&amp;color_button_over=0x{{ object.buttonovercolor }}&amp;color_button_highlight=0x{{ object.buttonhighlightcolor }}" />
+			<!--[if !IE]>-->
+			<object width="{{ object.get_width }}" height="{{ object.get_height }}" data="{{ CMS_MEDIA_URL }}swf/player.swf" type="application/x-shockwave-flash">
+			<param name="allowFullScreen" value="true" />
+			<param name="allowScriptAccess" value="always" />
+			<param name="allowFullScreen" value="true" />
+			<param name="quality" value="autohigh" />
+			<param name="wmode" value="window" />
+			<param name="bgcolor" value="#{{ object.bgcolor }}" />
+			<param name="flashvars" value="movie={{ object.get_movie }}&amp;{% if object.image %}image={{ object.image.url }}&amp;{% endif %}autoplay={{ object.auto_play|bool }}&amp;loop={{ object.loop|bool }}&amp;autohide={{ object.auto_hide|bool }}&amp;fullscreen={{ object.fullscreen|bool }}&amp;color_text=0x{{ object.textcolor }}&amp;color_seekbar=0x{{ object.seekbarcolor }}&amp;color_loadingbar=0x{{ object.loadingbarcolor }}&amp;color_seekbarbg=0x{{ object.seekbarbgcolor }}&amp;color_button_out=0x{{ object.buttonoutcolor }}&amp;color_button_over=0x{{ object.buttonovercolor }}&amp;color_button_highlight=0x{{ object.buttonhighlightcolor }}" />
+			<!--<![endif]-->
+		<!-- alternate content -->
+		{% trans "Missing flash plugin. Please download the latest Adobe Flash Player: " %}
+		<a href="http://www.adobe.com/go/getflashplayer">
+			<img alt="{% trans 'Get Adobe Flash Player' %}" src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"/>
+		</a>
+		<!-- /alternate content -->
+			<!--[if !IE]>-->
+			</object>
+			<!--<![endif]-->
+	</object>
+
+	<!--</video>-->
+</div>
+
+{% comment %}
+{% addtoblock "css" %}
+<!-- add this style for 100%x100% flash movie -->
+<style type="text/css">
+<!--
+	html { width:100%; height:100%; overflow:hidden; }
+	body { height:100%; }
+	.plugin_video div { width:100%; height:100%; }
+-->
+</style>
+{% endaddtoblock %}
+{% endcomment %}

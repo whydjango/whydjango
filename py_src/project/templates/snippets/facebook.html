@@ -1,0 +1,61 @@
+{% load i18n sekizai_tags %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ MEDIA_URL }}js/plugins.facebook.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function ($) {
+/* notes
+	  this framework does not require any api keys except for:
+	- login requires api key
+	- friendpile requires api key
+*/
+	// add share button
+	$('.fb-share').facebook('addShareButton');
+
+	// add like button
+	$('.fb-like').facebook('addLikeButton', {height: 30});
+
+	// add recommendations
+	$('.fb-recommendations').facebook('addRecommendations');
+
+	// add comments
+	$('.fb-comments').facebook('addComments');
+
+	// add activity feed
+	$('.fb-activityfeed').facebook('addActivityFeed');
+
+	// add like box
+	$('.fb-likebox').facebook('addLikeBox');
+
+	// add like box
+	$('.fb-livestream').facebook('addLiveStream');
+});
+//]]>
+</script>
+{% endaddtoblock %}
+
+<h3>Share button</h3>
+<p class="clearfix">
+	<span class="fb-share">http://www.google.ch</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="fb-share">http://www.google.com</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="fb-share">http://www.google.co.jp</span>
+</p>
+
+<h3>Like button</h3>
+<div class="fb-like">http://www.django-cms.org</div>
+<div class="fb-like">http://www.divio.ch</div>
+
+<h3>Recommendations</h3>
+<div class="fb-recommendations">http://www.django-cms.org</div>
+
+<h3>Comments</h3>
+<div class="fb-comments">http://www.django-cms.org</div>
+
+<h3>Activity Feed</h3>
+<div class="fb-activityfeed">http://www.django-cms.org</div>
+
+<h3>Like Box</h3>
+<div class="fb-likebox">20531316728</div>
+
+<h3>Live Stream</h3>
+<div class="fb-livestream">20531316728</div>

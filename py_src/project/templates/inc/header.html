@@ -1,0 +1,46 @@
+{% load i18n cms_tags menu_tags %}
+<h1 class="logo_main"><a href="/" class="offset noprint pngfix">{{ site_settings.site.name }}</a><img src="{{ MEDIA_URL }}img/logo_main.png" class="print" alt="{{ site_settings.site.name }}" /></h1>
+
+<!-- start: wai -->
+<hr class="hidden" />
+<h2 class="hidden">{% trans "Shortcuts:" %}</h2>
+<ul class="hidden">
+	<li><a href="/" title="[Alt + 0]" accesskey="0">{% trans "Go to home" %}</a></li>
+	<li><a href="#navigation" title="[Alt + 1]" accesskey="1">{% trans "Jump to navigation" %}</a></li>
+	<li><a href="#content" title="[Alt + 2]" accesskey="2">{% trans "Jump to content" %}</a></li>
+	<li><a href="#footer" title="[Alt + 3]" accesskey="3">{% trans "Contact" %}</a></li>
+	<li><a href="#sitemap" title="[Alt + 4]" accesskey="4">{% trans "Sitemap" %}</a></li>
+</ul>
+<hr class="hidden" />
+<!-- end: wai -->
+
+<h2 class="hidden" id="navigation">{% trans "Navigation:" %}</h2>
+
+<!-- main navigation -->
+<ul id="mainnav" class="radius10 clearfix"> 
+	{% spaceless %}{% show_menu 0 1 100 100 "menu/mainnav.html" %}{% endspaceless %}
+</ul>
+
+{% comment %}
+<!-- sub navigation -->
+<ul class="subnav clearfix">
+	<li class="hidden">&nbsp;</li>
+	{% spaceless %}{% show_menu 1 100 0 1 "menu/subnav.html" %}{% endspaceless %}
+	{% spaceless %}{% show_sub_menu 100 "menu/subnav.html" %}{% endspaceless %}
+	{% spaceless %}{% show_menu_below_id "meta" 0 100 100 100 "menu/subnav.html" %}{% endspaceless %}
+</ul>
+{% endcomment %}
+
+<!-- language navigation -->
+<ul id="langnav">
+	{% spaceless %}{% language_chooser "menu/langnav.html" "native" %}{% endspaceless %}
+</ul>
+
+<!-- breadcrumb -->
+<ul class="breadcrumb radius5 clearfix">
+	<li class="title">{% trans "You are here: " %}</li>
+	{% spaceless %}{% show_breadcrumb 0 "inc/breadcrumb.html" %}{% endspaceless %}
+	{% block extend_breadcrumb %}{% endblock extend_breadcrumb %}
+</ul>
+
+<hr class="hidden" />

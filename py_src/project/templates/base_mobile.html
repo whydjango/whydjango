@@ -1,0 +1,36 @@
+{% load i18n cms_tags sekizai_tags %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" dir="ltr">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=8" />
+	<title>{% block title %}{% block title_prefix %}{% page_attribute page_title %}{% endblock title_prefix %}{% block title_extra %}{% endblock title_extra %}{% block title_suffix %} - {{ site_settings.site.name }}{% endblock title_suffix %}{% endblock title %}</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	{% block meta_tags %}{% for tag in meta_tags %}{% spaceless %}{{ tag }}{% endspaceless %}
+	{% endfor %}{% endblock meta_tags %}{% if site_settings.favicon %}<link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}{{ site_settings.favicon }}" />
+	<link rel="image_src" type="image/jpeg" href="{{ MEDIA_URL }}favicon.jpg" />
+	<link rel="apple-touch-icon" href="{{ MEDIA_URL }}favicon.png" />{% endif %}{% block css %}
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/modules.css" media="screen" />{% endblock css %}{% render_block "css" %}{% block css_conditionals %}{% endblock css_conditionals %}
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>{% block extrahead %}{% endblock extrahead %}
+</head>
+<body class="{% block tpl_id %}tpl_master{% endblock %} {{ LANGUAGE_CODE }}">{% spaceless %}
+{% endspaceless %}{% block extend_base %}{% endblock extend_base %}{% block js %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/plugins.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/base.js"></script>{% endblock js %}
+{% render_block "js" %}{% if GOOGLE_ANALYTICS_ID %}
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_ID }}']);
+_gaq.push(['_trackPageview']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>{% endif %}<noscript>
+	<p id="require-js">{% trans "Please activate JavaScript to enable all features." %}
+	<a href="http://base.google.com/support/bin/answer.py?hl=de&amp;answer=23852">{% trans "Read this page for more help" %}</a>.</p>
+</noscript>
+</body>
+</html>

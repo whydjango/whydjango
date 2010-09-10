@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n cms_tags %}
+
+{% block tpl_id %}tpl_master{% endblock %}
+
+{% block extend_base %}
+<!-- start: header -->
+<div id="header" class="container_24">
+	{% include "inc/header.html" %}
+</div>
+<!-- end: header -->
+{% block content %}
+<!-- start: content -->
+<h1 class="hidden" id="content">{% trans "Content:" %} {% page_attribute title %}</h1>
+<div id="main" class="container_24 clearfix">
+{% block feature %}{% with "960" as width %}{% placeholder feature %}{% endwith %}{% endblock feature %}
+{% block col_content %}
+	{% block page_title %}<h1>{% page_attribute title %}</h1>{% endblock page_title %}
+	{% with "960" as width %}
+		{% placeholder col_content %}
+	{% endwith %}
+{% endblock col_content %}
+</div>
+<!-- end: content -->
+{% endblock content %}
+<!-- start: footer -->
+<div id="footer" class="container_24">
+	{% include "inc/footer.html" %}
+</div>
+<!-- end: footer -->
+{% endblock extend_base %}
