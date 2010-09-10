@@ -1,6 +1,6 @@
 project_name = 'ydjango'
 defaults = {
-    'repo': 'git://github.com/ojii/ydjango.git',
+    'repo': 'git://github.com/whydjango/whydjango.git',
 }
 settings = {
     'dev': {

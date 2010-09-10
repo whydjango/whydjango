@@ -8,3 +8,4 @@ downloads
 secret.cfg
 *.sqlite
 personal*
+src
