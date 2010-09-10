@@ -1,7 +1,7 @@
 from project.settings.development import *
 
 IS_DEV_SERVER = True
-CACHE_BACKEND = 'db://dbcache'
+CACHE_BACKEND = 'locmem://'
 
 
 # DATABASE SETTINGS
