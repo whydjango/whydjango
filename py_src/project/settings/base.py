@@ -62,7 +62,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
-    'siteinfo.middleware.login_required.RequireLoginMiddleware',
   # 'project.safe_gzip_middleware.SafeGZipMiddleware',
 )
 
@@ -113,7 +112,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
     "cms.context_processors.media",
-    "siteinfo.context_processors.siteinfo",
     "sekizai.context_processors.sekizai",
 )
 
