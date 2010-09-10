@@ -91,12 +91,10 @@ INSTALLED_APPS = (
     # standard apps
     'appmedia',
     'cms',
-    'contactform',
     'filer',
     'menus',
     'mptt',
     'sekizai',
-    'siteinfo',
     'sorl.thumbnail',
     'south',
     'tinymce',
