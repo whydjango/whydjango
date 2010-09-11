@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n cms_tags %}
+
+{% block tpl_id %}tpl_home{% endblock %}
+
+{% block extend_base %}
+<!-- start: header -->
+<div id="header" class="container_24">
+	{% include "inc/header.html" %}
+</div>
+<!-- end: header -->
+<!-- start: content -->
+{% block content %}
+<div id="main" class="container_24 clearfix">
+  <div id="showcase" class="grid_15 alpha">
+    {% with "590" as width%}
+      {% placeholder top %}
+    {% endwith %}
+  </div>
+  <div class="grid_9 omega">
+    {% with "350" as width%}
+      {% placeholder top_image %}
+    {% endwith %}
+  </div>
+  <div id="personas-case-studies" class="grid_24 alpha omega">
+    <div id="business-managers" class="grid_5 alpha">
+      {% with "190" as width%}
+        {% placeholder left %}
+      {% endwith %}
+    </div>
+    <div id="designers-creatives" class="grid_5">
+      {% with "190" as width%}
+        {% placeholder center_left %}
+      {% endwith %}
+    </div>
+    <div id="developers" class="grid_5">
+      {% with "190" as width%}
+        {% placeholder center_right %}
+      {% endwith %}
+    </div>
+    <div id="case-studies" class="grid_9 omega">
+      {% with "190" as width%}
+        {% placeholder right %}
+      {% endwith %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+<!-- end: content -->
+<!-- start: footer -->
+<div id="footer" class="container_24">
+	{% include "inc/footer.html" %}
+</div>
+<!-- end: footer -->
+{% endblock %}
