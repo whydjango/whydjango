@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% load i18n cms_tags %}
-
+{% load i18n cms_tags menu_tags %}
 {% block tpl_id %}tpl_home{% endblock %}
 
 {% block extend_base %}
 <!-- start: header -->
 <div id="header" class="container_24">
-	{% include "inc/header.html" %}
+  {% include "inc/header.html" %}
 </div>
 <!-- end: header -->
 <!-- start: content -->
@@ -47,9 +46,18 @@
 </div>
 {% endblock %}
 <!-- end: content -->
+<!-- start: global navigation -->
+{% comment %}
+<div class="container_24">
+  <ul id="mainnav" class="radius10 clearfix">
+    {% spaceless %}{% show_menu 0 1 100 100 "menu/mainnav.html" %}{% endspaceless %}
+  </ul>
+</div>
+{% endcomment %}
+<!-- end: global navigation -->
 <!-- start: footer -->
 <div id="footer" class="container_24">
-	{% include "inc/footer.html" %}
+  {% include "inc/footer.html" %}
 </div>
 <!-- end: footer -->
 {% endblock %}
