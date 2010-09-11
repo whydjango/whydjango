@@ -1,0 +1,20 @@
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+{% for column in instance.get_columns %}
+<th>{{ column.name }}</th>
+{% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for row in instance.get_rows %}
+<tr>
+<th>{{ row.name }}</th>
+{% for cell in row.cells.all %}
+<td>{{ cell.text }}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
