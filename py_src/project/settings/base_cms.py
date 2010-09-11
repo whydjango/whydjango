@@ -4,6 +4,7 @@ CMS_TEMPLATES = (
     ('tpl_master.html', gettext('master template')),
     ('tpl_col-two.html', gettext('row two-columns')),
     ('tpl_col-three.html', gettext('row three-columns')),
+    ('tpl_home.html', gettext('home template')),
 )
 
 '''
