@@ -75,68 +75,14 @@ table tfoot td { text-align:center; }
 /*##################################################|*/
 /* #FOOTER# */
 
+#footer {
+  text-align: center;
+}
+
 /*##################################################|*/
 /* #MODULES# */
 
-/* START REMOVE THIS CSS */
-.content { min-height:600px; }
 
-.logo_main, #footer p { text-align:center; border:5px solid #ccc; }
-.logo_main a, #footer a { display:block; }
-
-.logo_main { margin-bottom:15px; border-top:none; }
-.logo_main a { padding:15px 0; background:url('../img/logo_main.png') no-repeat center center; }
-.logo_main a:hover { background-color:#f5f5f5; }
-.logo_main a:active, .header a:focus { background-color:#ccc; }
-
-#footer p { margin-top:15px; margin-bottom:0; border-bottom:none; }
-#footer a { padding:10px 0; background:#eee url('../img/dummy/logo_divio.png') no-repeat center center; }
-#footer a:hover { background-color:#ccc; }
-
-ul#mainnav { margin:0 0 15px; list-style:none; border:5px solid #f5f5f5; }
-  #mainnav li { float:left; padding:0; border-right:5px solid #f5f5f5; }
-  #mainnav li a { float:left; color:#666; font-weight:bold; text-decoration:none; padding:5px 15px; }
-  #mainnav li a:hover { background:#f5f5f5; color:#000; }
-  #mainnav li a:active, #mainnav li a:focus { background:#ccc !important; }
-  #mainnav li.active a, #mainnav li.hover a { color:#009; background:#f5f5f5; }
-  /* second level */
-  #mainnav li { position:relative; left:0; top:0; z-index:20; }
-  #mainnav li ul { display:none; position:absolute; left:0; top:29px; z-index:25; list-style:none; margin:0; }
-  #mainnav li ul li { padding:0; white-space:nowrap; zoom:1; }
-  /* second level style */
-  #mainnav li ul { float:none; left:-5px; border:none; }
-  #mainnav li ul li { float:none; border:none; zoom:1; }
-  #mainnav li ul li a { display:block; float:none; padding:5px 25px 5px 20px; }
-  #mainnav li.active ul li a { color:#666; zoom:1; }
-  /* second level hover */
-  #mainnav li.hover ul li a { color:#666; }
-  #mainnav li.hover ul li a:hover { color:#009; }
-  #mainnav li.active ul .active a { color:#009; }
-
-ul.subnav { list-style:none; margin:0; position:relative; left:0; top:-10px; z-index:10; }
-  .subnav li { float:left; padding:0 15px; border-right:1px solid #ccc; }
-  .subnav li a { float:left; text-decoration:none; }
-  .subnav li a:hover { color:#000; text-decoration:underline; }
-  .subnav li.active { font-weight:bold; }
-
-ul#langnav { float:right; list-style:none; margin:0; }
-  #langnav li { float:left; padding:0; font-size:11px; text-transform:uppercase; padding:3px 10px 3px 0; }
-  #langnav li.active a { color:#000; text-decoration:none; }
-
-ul.breadcrumb { padding:0 15px; margin:0 0 15px; list-style:none; 
-				border:5px solid #f5f5f5; border-top:none; border-bottom:none; background:#f5f5f5; }
-  .breadcrumb li { float:left; font-size:11px; padding:3px 10px 3px 0; }
-  .breadcrumb li a { border-right:2px solid #ccc; padding-right:10px; }
-  .breadcrumb .title { font-weight:bold; }
-
-ul.pagenav { list-style:none; margin:0 0 15px; }
-  .pagenav li { float:left; padding:0; zoom:1; }
-  .pagenav li a { float:left; padding:0 3px; }
-  .pagenav li a:hover { color:#000; }
-  .pagenav li span { font-weight:bold; padding:0 3px; }
-  .pagenav .next a, .pagenav .back a,
-  .pagenav .first a, .pagenav .last a { text-decoration:none; }
-/* END REMOVE THIS CSS */
 
 /*##################################################|*/
 /* #PLUGINS# */

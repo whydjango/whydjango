@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=8" />
-	<title>{% block title %}{% block title_prefix %}{% page_attribute page_title %}{% endblock title_prefix %}{% block title_extra %}{% endblock title_extra %}{% block title_suffix %} - {{ site_settings.site.name }}{% endblock title_suffix %}{% endblock title %}</title>
+	<title>{% block title %}{% block title_prefix %}{% page_attribute page_title %}{% endblock title_prefix %}{% block title_extra %}{% endblock title_extra %}{% block title_suffix %} - Why Django{% endblock title_suffix %}{% endblock title %}</title>
 	{% block meta_tags %}{% for tag in meta_tags %}{% spaceless %}{{ tag }}{% endspaceless %}
 	{% endfor %}{% endblock meta_tags %}{% if site_settings.favicon %}<link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}{{ site_settings.favicon }}" />
 	<link rel="image_src" type="image/jpeg" href="{{ MEDIA_URL }}favicon.jpg" />
