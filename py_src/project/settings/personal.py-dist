@@ -1,0 +1,65 @@
+'''
+Individual user settings:
+    * use my own db
+    * only send mails to myself
+    * ...
+If you want to use these settings you need to make a copy of `personal.cfg-dist`
+without the `-dist` and run buildout like this
+`./bin/buildout -c personal.cfg`
+
+If you want to edit an app, clone it into your workspace, then edit `develop` in your `personal.cfg` and
+rerun `./buildout -c personal.cfg`. Now that version of the package will be used (added to the path).
+
+`
+[buildout]
+develop +=
+    ../django-myapp
+
+`
+'''
+from project.settings.development_local import *
+ADMINS = (
+     ('My Name', 'me@example.com'),
+)
+MANAGERS = ADMINS
+
+MY_EXCLUDED_APPS = [
+#    'south',
+]
+MY_INCLUDED_APPS = [
+#    'debug_toolbar',
+]
+
+MIDDLEWARE_CLASSES += [
+#    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+
+INTERNAL_IPS = ('127.0.0.1','0.0.0.0','192.168.*.*')
+
+for APP in MY_EXCLUDED_APPS: 
+    if APP in INSTALLED_APPS: 
+        INSTALLED_APPS.remove(APP)
+        print "[-] '%s' from INSTALLED_APPS" % APP
+for APP in MY_INCLUDED_APPS:
+    if not APP in INSTALLED_APPS:
+        INSTALLED_APPS.append(APP)
+        print "[+] '%s' to INSTALLED_APPS" % APP
+
+SITE_ID=1
+
+my_mode='default'
+if my_mode=='local':
+    DATABASE_NAME = ''
+    DATABASE_USER = ''
+    DATABASE_PASSWORD = ''
+    DATABASE_HOST = '127.0.0.1'
+else:
+    print "NOT USING PERSONAL DB CONFIG!!!"
+    
+CACHE_BACKEND = 'db://dbcache'
+
+#EMAIL_HOST = ''
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_USE_TLS = True
+
