@@ -99,6 +99,10 @@ INSTALLED_APPS = (
     'south',
     'tinymce',
     'uni_form',
+    
+    # additional apps
+    'multilingual',
+    'simplegallery',
 
     # custom apps
     'project',
@@ -115,6 +119,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
     "cms.context_processors.media",
     "sekizai.context_processors.sekizai",
+    "multilingual.context_processors.multilingual",
 )
 
 # PUT REAL FROM EMAIL HERE
