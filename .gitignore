@@ -10,4 +10,6 @@ secret.cfg
 personal*
 src
 bootstrap.py
-py_src/project/media*
+py_src/project/media/filer_public
+py_src/project/media/private
+py_src/project/media/tmp
