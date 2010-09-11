@@ -22,7 +22,7 @@ class Migration(SchemaMigration):
         db.delete_column('cmsplugin_gridplugin', 'title')
 
         # Adding field 'GridPlugin.grid'
-        db.add_column('cmsplugin_gridplugin', 'grid', self.gf('django.db.models.fields.related.ForeignKey')(default='', to=orm['custom_plugins.Grid']), keep_default=False)
+        db.add_column('cmsplugin_gridplugin', 'grid', self.gf('django.db.models.fields.related.ForeignKey')(default=0, to=orm['custom_plugins.Grid']), keep_default=False)
 
         # Changing field 'GridColumn.grid'
         db.alter_column('custom_plugins_gridcolumn', 'grid_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['custom_plugins.Grid']))
