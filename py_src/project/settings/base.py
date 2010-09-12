@@ -82,7 +82,6 @@ INSTALLED_APPS = (
     'cms.plugins.snippet',
     'cms.plugins.text',
     'cms.plugins.twitter',
-    'cms.plugins.video',
     'cmsplugin_filer_file',
     'cmsplugin_filer_image',
     'cmsplugin_filer_teaser',
@@ -103,6 +102,7 @@ INSTALLED_APPS = (
     # additional apps
     'multilingual',
     'simplegallery',
+    'contentgallery',
 
     # custom apps
     'project',
