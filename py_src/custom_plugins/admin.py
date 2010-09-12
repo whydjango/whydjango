@@ -5,6 +5,7 @@ class GridCellInline(admin.StackedInline):
     model = GridCell
     extra = 0
     can_delete = False
+    max_num = 0
 
 
 class GridColumnAdmin(admin.ModelAdmin):
