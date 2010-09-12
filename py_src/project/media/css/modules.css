@@ -124,3 +124,32 @@ table tfoot td { text-align:center; }
 @media screen and (max-device-width: 480px){
 	/* mobile css here */
 }
+
+/*##################################################|*/
+/* #WHY DJANGO# */
+.logo_main { margin:16px 0 0 22px; }
+#logo-container { background:#fff; }
+
+body { background:#000; }
+
+#showcase { background:#71c837; padding:32px; }
+#showcase h2, p, li { color:#000; }
+#showcase h2 { font-size:22px; }
+#showcase p {}
+
+#business-managers { background:#24221c; color:#fff; }
+#designers-creatives { background:#28220b; }
+#developers { background:#22280b; }
+
+#business-managers,
+#designers-creatives,
+#developers { padding:0 28px 28px 28px; width:170px; }
+
+
+#business-managers h2,
+#designers-creatives h2,
+#developers h2 { background:#000; color:#fff; text-transform:uppercase; font-size:14px; padding:4px; }
+
+#business-managers p, #business-managers h3,
+#designers-creatives p, #designers-creatives h3,
+#developers p, #developers h3 { color:#fff; }
