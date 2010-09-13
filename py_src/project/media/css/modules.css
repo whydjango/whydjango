@@ -215,6 +215,14 @@ body { background:#000; }
   text-decoration: none;
 }
 
+.subpage {
+  background-color: #fff;
+}
+
+.subpage h1 {
+  color: #000;
+}
+
 #footer {
   text-align: center;
   background-color: #24221c;
