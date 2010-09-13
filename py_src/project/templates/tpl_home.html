@@ -11,53 +11,91 @@
 <!-- start: content -->
 {% block content %}
 <div id="main" class="container_24 clearfix">
-  <div id="showcase" class="grid_15 alpha">
-    {% with "590" as width%}
-      {% placeholder top %}
+  <div id="showcase-wrapper" class="grid_12 omega">
+    <div id="showcase">
+      {% with "470" as width%}
+        {% placeholder top %}
+      {% endwith %}
+    </div>
+  </div>
+  <div id="case-studies" class="grid_12 alpha">
+    {% with "190" as width%}
+      {% placeholder right %}
     {% endwith %}
   </div>
-  <div class="grid_9 omega">
-    {% with "350" as width%}
-      {% placeholder top_image %}
+</div>
+<div id="audiences" class="container_24 clearfix">
+  <div id="business-managers" class="grid_8">
+    <h2>Managers</h2>
+    <div id="managers-summary">
+    {% with "190" as width%}
+      {% placeholder left %}
+    {% endwith %}
+    </div>
+    <p id="managers-link">
+      <a href="/en/managers/">Decide &raquo;</a>
+    </p>
+  </div>
+  <div id="designers-creatives" class="grid_8">
+    <h2>Designers</h2>
+    <div id="designers-summary">
+    {% with "190" as width%}
+      {% placeholder center_left %}
+    {% endwith %}
+    </div>
+    <p id="designers-link">
+      <a href="/en/designers/">Image &raquo;</a>
+    </p>
+  </div>
+  <div id="developers" class="grid_8">
+    <h2>Developers</h2>
+    <div id="developers-summary">
+    {% with "190" as width%}
+      {% placeholder center_right %}
+    {% endwith %}
+    </div>
+    <p id="developers-link">
+      <a href="/en/developers/">Hack &raquo;</a>
+    </p>
+  </div>
+</div>
+<div id="who-is-using" class="container_24 clearfix">
+  <div class="grid_24">
+    <h3>who's using <span class="django-green">Django</span></h3>
+    {% with "950" as width%}
+      {% placeholder bottom %}
     {% endwith %}
   </div>
-  <div id="personas-case-studies" class="grid_24 alpha omega">
-    <div id="business-managers" class="grid_5 alpha">
-      {% with "190" as width%}
-        {% placeholder left %}
-      {% endwith %}
+</div>
+<div class="container_24 clearfix">
+  <div id="more" class="grid_24 clearfix">
+    <h4>More about Django</h4>
+    <div class="grid_4 prefix_1">
+      <a href="#">Developers</a><br/>
+      <a href="#">Find an Expert</a><br/>
+      <a href="#">Jobs</a>
     </div>
-    <div id="designers-creatives" class="grid_5">
-      {% with "190" as width%}
-        {% placeholder center_left %}
-      {% endwith %}
+    <div class="grid_4 prefix_1">
+      <a href="#">Books</a><br/>
+      <a href="#">Conferences</a><br/>
+      <a href="#">Classes and Training</a>
     </div>
-    <div id="developers" class="grid_5">
-      {% with "190" as width%}
-        {% placeholder center_right %}
-      {% endwith %}
+    <div class="grid_4 prefix_1">
+      <a href="#">Django Software Foundation</a><br/>
+      <a href="#">Python Software Foundation</a>
     </div>
-    <div id="case-studies" class="grid_9 omega">
-      {% with "190" as width%}
-        {% placeholder right %}
-      {% endwith %}
+    <div class="grid_7 prefix_1">
+      <h3><a href="#">Get started with Django &raquo;</a></h3>
     </div>
   </div>
 </div>
 {% endblock %}
 <!-- end: content -->
-<!-- start: global navigation -->
-{% comment %}
-<div class="container_24">
-  <ul id="mainnav" class="radius10 clearfix">
-    {% spaceless %}{% show_menu 0 1 100 100 "menu/mainnav.html" %}{% endspaceless %}
-  </ul>
-</div>
-{% endcomment %}
-<!-- end: global navigation -->
 <!-- start: footer -->
-<div id="footer" class="container_24">
+<div class="container_24 clearfix">
+  <div id="footer" class="grid_24">
   {% include "inc/footer.html" %}
+  </div>
 </div>
 <!-- end: footer -->
 {% endblock %}

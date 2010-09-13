@@ -34,7 +34,9 @@ h6 { font-size:12px; }
 
 q, blockquote { padding-left:10px; border-left:5px solid #009; background:#eee; }
 q { padding:2px 10px; }
-
+img {
+  display: block;
+}
 table { width:100%; }
 table td, table th { padding-left:5px; padding-right:5px; }
 table th { background:#009; color:#fff; }
@@ -75,14 +77,8 @@ table tfoot td { text-align:center; }
 /*##################################################|*/
 /* #FOOTER# */
 
-#footer {
-  text-align: center;
-}
-
 /*##################################################|*/
 /* #MODULES# */
-
-
 
 /*##################################################|*/
 /* #PLUGINS# */
@@ -127,29 +123,101 @@ table tfoot td { text-align:center; }
 
 /*##################################################|*/
 /* #WHY DJANGO# */
+
 .logo_main { margin:16px 0 0 22px; }
-#logo-container { background:#fff; }
+#logo-container {
+  background:#fff;
+  border-top: 5px solid #24221c;
+  border-bottom: 5px solid #24221c;
+  padding-bottom: 5px;
+}
+
+#slogan h2 {
+  color: #000;
+  margin-top: 1.25em;
+}
 
 body { background:#000; }
 
-#showcase { background:#71c837; padding:32px; }
-#showcase h2, p, li { color:#000; }
-#showcase h2 { font-size:22px; }
-#showcase p {}
+#showcase-wrapper {
+  background-color: #71c837;
+  width: 480px;
+}
 
-#business-managers { background:#24221c; color:#fff; }
-#designers-creatives { background:#28220b; }
-#developers { background:#22280b; }
+#showcase {
+  margin: 25px;
+}
 
-#business-managers,
-#designers-creatives,
-#developers { padding:0 28px 28px 28px; width:170px; }
+#showcase h2 {
+  color: #000;
+}
 
+#case-studies {
+  background-color: #c6e9af;
+}
 
-#business-managers h2,
-#designers-creatives h2,
-#developers h2 { background:#000; color:#fff; text-transform:uppercase; font-size:14px; padding:4px; }
+#who-is-using h3 {
+  color: #fff;
+  padding-left: 15px;
+}
 
-#business-managers p, #business-managers h3,
-#designers-creatives p, #designers-creatives h3,
-#developers p, #developers h3 { color:#fff; }
+.django-green {
+  color: #71c837;
+}
+
+#audiences h2 {
+  color: #fff;
+  text-transform: uppercase;
+  border-left: 5px solid #71c837;
+  padding-left: 10px;
+  margin-top: 15px;
+}
+
+#managers-summary,
+#designers-summary,
+#developers-summary {
+  background-color: #24221c;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+#managers-link,
+#designers-link,
+#developers-link {
+  background-color: #24221c;
+  padding: 0 10px 10px 10px;
+  text-align: right;
+}
+
+#managers-link a,
+#designers-link a,
+#developers-link a {
+  color: #79725f;
+  text-decoration: none;
+}
+
+#more-wrapper {
+}
+
+#more {
+  background-color: #8a916f;
+  padding-bottom: 15px;
+}
+
+#more h4 {
+  color: #000;
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
+#more a {
+  color: #000;
+  text-decoration: none;
+}
+
+#footer {
+  text-align: center;
+  background-color: #24221c;
+  color: #8a916f;
+  padding-top: 15px;
+}
