@@ -152,8 +152,35 @@ body { background:#000; }
   color: #000;
 }
 
-#case-studies {
+#case-studies-wrapper {
   background-color: #c6e9af;
+}
+
+#case-studies {
+  margin: 25px;
+}
+
+#case-studies h2 {
+  color: #000;
+}
+
+.thmb-nav {
+  display: none !important;
+}
+
+.fv-wrapper {
+  text-align: center;
+}
+
+.fv-wrapper ul {
+  margin: auto !important;
+}
+
+.fv-magnifier,
+.fv-controls,
+.fv-status,
+.simplegallery_thumbnails {
+  display: none !important;
 }
 
 #who-is-using h3 {
